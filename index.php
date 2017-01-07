@@ -54,7 +54,7 @@ if ($result = mysqli_query($link, "SELECT * FROM employees"))
 echo "</table><br>";
 }    
 ?>
-
+//<>
 <!DOCTYPE html>
 <html>
     <head>
