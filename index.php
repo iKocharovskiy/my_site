@@ -54,36 +54,19 @@ if ($result = mysqli_query($link, "SELECT * FROM employees"))
 echo "</table><br>";
 }    
 ?>
-//<>
+
 <!DOCTYPE html>
 <html>
     <head>
         <title>Site</title>
-        <meta charset="UTF-8">
-        <script type="text/JavaScript" src="jquery-3.1.1.min.js"></script>
-        <script type="text/JavaScript">
-         $(document).ready(function() {
-             $("#feedback").submit(function(event){
-             event.preventDefault();
-             $.ajax({
-                url:"feedback_lib.php",
-                type: "post",
-                data: $("#feedback").serialize(),
-                success: function(answer) {
-                    $("#answer").html(answer);
-                }
-             });
-            });
-         });
-        </script>
+        <meta charset="UTF-8">        
     </head>
     <body>
         <form id="feedback" name="feedback" method="post" autocomplete="off"> <br>
-             last_name <input id="last_name" type="text" name="last_name" value="<?php echo $last_name;?>" size="10"/> 
-             first_name <input id="first_name" type="text" name="first_name" value="<?php echo $first_name;?>" size="10"/>
-             position <input id="position" type="text" name="position" value="<?php echo $position;?>" size="10"/>            
+             last_name <input type="text" name="last_name" value="<?php echo $last_name;?>" size="10"/> 
+             first_name <input type="text" name="first_name" value="<?php echo $first_name;?>" size="10"/>
+             position <input type="text" name="position" value="<?php echo $position;?>" size="10"/>            
              <input type="submit" name="click" value="Добавить пользователя"/>
         </form>
-        <div id="answer"></div>
     </body>
 </html>
